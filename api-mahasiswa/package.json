@@ -1,0 +1,11 @@
+{
+  "name": "api-mahasiswa",
+  "version": "1.0.0",
+  "description": "Latihan membuat REST API Mahasiswa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dede Irwanto",
+  "license": "ISC"
+}
