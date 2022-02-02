@@ -10,7 +10,7 @@ const connection = require("../config/database");
 router.get("/", (req, res) => {
   // query
   connection.query(
-    "SELECT * FROM mahasiswa ORDER BY id DESC",
+    "SELECT * FROM mahasiswa ORDER BY id_mahasiswa DESC",
     (error, rows) => {
       if (error) {
         return res.status(500).json({
