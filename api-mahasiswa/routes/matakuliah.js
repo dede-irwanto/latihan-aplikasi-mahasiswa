@@ -20,12 +20,17 @@ router.get("/", (req, res) => {
         });
       } else {
         const hasil = rows.reduce((group, row) => {
-          const { nama } = row;
-          group[nama] = group[nama] ?? [];
-          group[nama].push({
-            mata_kuliah: row.matakuliah,
-            jumlah_sks: row.sks,
-          });
+          // tentukan key group
+          if (group[row.nama]) {
+            const nama = group[row.nama];
+            if (Array.isArray(nama.matakuliah)) {
+              nama.matakuliah.push(row.matakuliah);
+            } else {
+              nama.matakuliah = [nama.matakuliah, row.matakuliah];
+            }
+          } else {
+            group[row.nama] = row;
+          }
           return group;
         }, {});
 
