@@ -11,6 +11,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse aplication/json
 app.use(bodyParser.json());
 
+// import auth
+app.use("/auth", require("./middleware"));
+
 // import route mahasiswa
 const mahasiswaRouter = require("./routes/mahasiswa");
 app.use("/api/mahasiswa", mahasiswaRouter);
