@@ -15,6 +15,10 @@ app.use(bodyParser.json());
 const mahasiswaRouter = require("./routes/mahasiswa");
 app.use("/api/mahasiswa", mahasiswaRouter);
 
+// import router matakuliah
+const mkRouter = require("./routes/matakuliah");
+app.use("/api/matakuliah", mkRouter);
+
 app.listen(port, () => {
   console.log(`app running at http://localhost:${port}`);
 });
