@@ -106,16 +106,10 @@ exports.login = (req, res) => {
                 message: error.message,
               });
             } else {
-              var role = Buffer.from(token.split(".")[1], "base64")
-                .toString("utf8")
-                .split(",")[2]
-                .split(":")[1];
-
               return res.status(200).json({
                 status: true,
                 message: "JWT Generated",
                 token: token,
-                role: role,
               });
             }
           });
@@ -132,5 +126,12 @@ exports.login = (req, res) => {
         });
       }
     }
+  });
+};
+
+exports.halamanrahasia = (req, res) => {
+  return res.status(200).json({
+    status: true,
+    message: "Halaman ini hanya dapat diakses oleh user dengan role 2",
   });
 };

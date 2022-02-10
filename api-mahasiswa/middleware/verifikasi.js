@@ -17,7 +17,7 @@ const verifikasi = () => {
             message: "Token tidak terdaftar",
           });
         } else {
-          // get user role
+          //   get user role
           var role = Buffer.from(token.split(".")[1], "base64")
             .toString("utf8")
             .split(",")[2]
